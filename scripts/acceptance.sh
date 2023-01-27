@@ -1,12 +1,10 @@
-#!/bin/bash
-
+#! /bin/bash
 set -e
 
-# acceptance test
-X=$(./yq w ./examples/sample.yaml b.c 3 | ./yq r - b.c)
+for test in acceptance_tests/*.sh; do
+  echo "--------------------------------------------------------------"
+  echo "$test"
+  echo "--------------------------------------------------------------"
+  (exec "$test");
+done
 
-if [[ $X != 3 ]]; then
-  echo "Failed acceptance test: expected 3 but was $X"
-  exit 1
-fi
-echo "acceptance tests passed"

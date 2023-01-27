@@ -1,2 +1,1 @@
-a: simple
-b: [1, 2]
+["foobar", "foobaz", "blarp"]

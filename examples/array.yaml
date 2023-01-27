@@ -1,9 +1,2 @@
----
-- become: true
-  gather_facts: false
-  hosts: lalaland
-  name: "Apply smth"
-  roles:
-    - lala
-    - land
-  serial: 1
+- [cat, dog, frog, cow]
+- [apple, banana, grape, mango]
